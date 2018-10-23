@@ -1,0 +1,18 @@
+ul{
+    text-emphasis: none;
+    text-decoration: none;
+    border: 2px solid black;
+    margin: auto;
+    width: auto;
+    display: flex;
+
+}
+li{
+    display: inline;
+    margin: auto;
+    text-align: center;
+    
+}
+a{
+    text-decoration: none;
+}
