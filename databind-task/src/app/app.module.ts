@@ -11,6 +11,9 @@ import { Component6Component } from './scenario4/component6/component6.component
 import { ParentComponent } from './scenario5/parent/parent.component';
 import { ChildComponent } from './scenario5/child/child.component';
 import { GrandchildComponent } from './scenario5/grandchild/grandchild.component';
+import { Child1Component } from './scenario6/child1/child1.component';
+import { Child2Component } from './scenario6/child2/child2.component';
+import { Parent1Component } from './scenario6/parent1/parent1.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { GrandchildComponent } from './scenario5/grandchild/grandchild.component
     Component6Component,
     ParentComponent,
     ChildComponent,
-    GrandchildComponent
+    GrandchildComponent,
+    Child1Component,
+    Child2Component,
+    Parent1Component
   ],
   imports: [
     BrowserModule
