@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <!-- <a class="navbar-brand" href="/">Sc200</a> -->
+  <div class="navbar-expand mr-auto">
+     <div class="navbar-nav">
+      <!-- <a class="nav-item nav-link active" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link" href="#">Contact</a>-->
+    </div> 
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      
+      <form class="form-inline my-2 my-lg-0">
+          
+          <input class="form-control mr-sm-2" #box type="search" placeholder="Username/Email" aria-label="Search">
+          <input class="form-control mr-sm-2" #box1 type="search" placeholder="Password" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)=login(box.value,box1.value) type="submit">Log in</button>
+          &nbsp;
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+          &nbsp;
+        </form>
+    </div>
+  </div>
+</nav>
