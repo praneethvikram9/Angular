@@ -19,7 +19,12 @@ export class HeaderComponent implements OnInit {
   }
   login(username:string,password:string){
      this.user_temp = new User();
-    this.user_temp.username=username;
+     if(this.ValidateEmail(username)==true){
+       this.user_temp.email=username;
+     }
+     else{
+       this.user_temp.username=username;
+     }
     this.user_temp.password=password;
     this.userService.search(this.user_temp.username).subscribe(data => {
       this.flag = data;
@@ -28,9 +33,20 @@ export class HeaderComponent implements OnInit {
       }
       else{
         this.router.navigate(['/loginerror']);
-      }
-      
+      }    
     })
   }
 
+  signup(){
+    
+  }
+  //checking whether given email is valid or not.
+   ValidateEmail(mail) 
+    {
+       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+        {
+          return (true)
+        }
+      return (false)
+    }
 }

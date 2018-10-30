@@ -10,9 +10,9 @@ export class UserService {
 
   public url = "";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   search(username):Observable<any>{
-    return this.http.get(this.url,user);
+    return this.http.get(this.url+"/"+username);
   }
 }

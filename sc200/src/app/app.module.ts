@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,11 @@ import { UiModule } from './ui/ui.module';
   ],
   imports: [
     BrowserModule,
-    UiModule
+    UiModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
