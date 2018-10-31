@@ -24,6 +24,11 @@ export class FileService implements IFileService {
     this.map.set(fileElement.id, this.clone(fileElement));
     return fileElement;
   }
+  addFiles(fileElem:FileElement){
+    fileElem.id=v4();
+    this.map.set(fileElem.id,this.clone(fileElem));
+    return fileElem;
+  }
 
   delete(id: string) {
     this.map.delete(id);

@@ -17,12 +17,18 @@ export class AppComponent {
   currentPath: string;
   canNavigateUp = false;
 
+  addFile(file: {name: string}) {
+    this.fileService.addFiles({isFolder: false,name:file.name,parent:this.currentRoot ? this.currentRoot.id : 'root'});
+    this.updateFileElementQuery();
+  }
+
   ngOnInit() {
     const folderA = this.fileService.add({ name: 'Folder A', isFolder: true, parent: 'root' });
     this.fileService.add({ name: 'Folder B', isFolder: true, parent: 'root' });
     this.fileService.add({ name: 'Folder C', isFolder: true, parent: folderA.id });
     this.fileService.add({ name: 'File A', isFolder: false, parent: 'root' });
     this.fileService.add({ name: 'File B', isFolder: false, parent: 'root' });
+   
 
     this.updateFileElementQuery();
   }
@@ -31,10 +37,7 @@ export class AppComponent {
     this.fileService.add({ isFolder: true, name: folder.name, parent: this.currentRoot ? this.currentRoot.id : 'root' });
     this.updateFileElementQuery();
   }
-  addFile(name: string){
-    this.fileService.add({isFolder:false,name:file.name,parent:this.currentRoot ? this.currentRoot.id:'root'});
-    this.updateFileElementQuery();
-  }
+ 
 
   removeElement(element: FileElement) {
     this.fileService.delete(element.id);

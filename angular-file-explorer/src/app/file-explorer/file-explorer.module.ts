@@ -29,7 +29,7 @@ import { NewFileDialogComponent } from './modals/new-file-dialog/new-file-dialog
     FormsModule,
     MatButtonModule
   ],
-  declarations: [FileExplorerComponent, RenameDialogComponent, NewFolderDialogComponent,NewFileDialogComponent];
+  declarations: [FileExplorerComponent, RenameDialogComponent, NewFolderDialogComponent,NewFileDialogComponent],
   exports: [FileExplorerComponent],
   entryComponents: [NewFolderDialogComponent, RenameDialogComponent,NewFileDialogComponent]
 })

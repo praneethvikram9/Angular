@@ -27,7 +27,7 @@ export class FileExplorerComponent {
   @Output() elementMoved = new EventEmitter<{ element: FileElement; moveTo: FileElement }>();
   @Output() navigatedDown = new EventEmitter<FileElement>();
   @Output() navigatedUp = new EventEmitter();
-  @Output() fileAdded = new EventEmitter<{name:string}>();
+  @Output() fileAdded = new EventEmitter<{name: string}>();
 
 
   deleteElement(element: FileElement) {
@@ -51,16 +51,19 @@ export class FileExplorerComponent {
   openNewFolderDialog() {
     let dialogRef = this.dialog.open(NewFolderDialogComponent);
     dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
       if (res) {
         this.folderAdded.emit({ name: res });
       }
     });
   }
   openNewFileDialog() {
-    let dialogRef = this.dialog.open(NewFileDialogComponent);
-    dialogRef.afterClosed().subscribe(res => {
+    let dialogRef1 = this.dialog.open(NewFileDialogComponent);
+    dialogRef1.afterClosed().subscribe(res => {
+      console.log(res);
       if (res) {
         this.fileAdded.emit({ name: res });
+        console.log("files added");
       }
     });
   }
