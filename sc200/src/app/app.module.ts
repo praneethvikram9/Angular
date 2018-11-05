@@ -6,10 +6,14 @@ import { UiModule } from './ui/ui.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

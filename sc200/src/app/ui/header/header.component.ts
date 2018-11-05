@@ -38,6 +38,8 @@ export class HeaderComponent implements OnInit {
   }
 
   signup(){
+
+    this.router.navigate(['/register']);
     
   }
   //checking whether given email is valid or not.

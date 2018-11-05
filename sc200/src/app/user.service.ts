@@ -9,10 +9,14 @@ import { User } from './user';
 export class UserService {
 
   public url = "";
+  public url1 = "";
 
   constructor(private http: HttpClient) { }
 
   search(username):Observable<any>{
     return this.http.get(this.url+"/"+username);
+  }
+  register(user:User){
+    return this.http.post(this.url1,user);
   }
 }

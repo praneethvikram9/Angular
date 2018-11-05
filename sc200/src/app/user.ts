@@ -1,5 +1,9 @@
 export class User{
-    username:string;
-    password:string;
-    email:string;
+   userName:string;
+   userId:number;
+   email:string;
+   firstName:string;
+   lastName:string;
+   password:string;
+   contactNumber:number;
 }
