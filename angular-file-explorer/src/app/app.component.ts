@@ -17,11 +17,7 @@ export class AppComponent {
   currentPath: string;
   canNavigateUp = false;
 
-  addFile(file: {name: string}) {
-    this.fileService.addFiles({isFolder: false,name:file.name,parent:this.currentRoot ? this.currentRoot.id : 'root'});
-    this.updateFileElementQuery();
-  }
-
+ 
   ngOnInit() {
     const folderA = this.fileService.add({ name: 'Folder A', isFolder: true, parent: 'root' });
     this.fileService.add({ name: 'Folder B', isFolder: true, parent: 'root' });
@@ -37,6 +33,13 @@ export class AppComponent {
     this.fileService.add({ isFolder: true, name: folder.name, parent: this.currentRoot ? this.currentRoot.id : 'root' });
     this.updateFileElementQuery();
   }
+  addFile(folder: { name: string }) {
+    this.fileService.add({ isFolder: false, name: folder.name, parent: this.currentRoot ? this.currentRoot.id : 'root' });
+    this.updateFileElementQuery();
+  }
+
+ 
+
  
 
   removeElement(element: FileElement) {

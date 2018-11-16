@@ -22,12 +22,13 @@ export class FileExplorerComponent {
   @Input() path: string;
 
   @Output() folderAdded = new EventEmitter<{ name: string }>();
+  @Output() fileAdded = new EventEmitter<{name: string}>();
   @Output() elementRemoved = new EventEmitter<FileElement>();
   @Output() elementRenamed = new EventEmitter<FileElement>();
   @Output() elementMoved = new EventEmitter<{ element: FileElement; moveTo: FileElement }>();
   @Output() navigatedDown = new EventEmitter<FileElement>();
   @Output() navigatedUp = new EventEmitter();
-  @Output() fileAdded = new EventEmitter<{name: string}>();
+
 
 
   deleteElement(element: FileElement) {
@@ -37,6 +38,9 @@ export class FileExplorerComponent {
   navigate(element: FileElement) {
     if (element.isFolder) {
       this.navigatedDown.emit(element);
+    }
+    else{
+      //
     }
   }
 
